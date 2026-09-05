@@ -1,0 +1,5 @@
+target/
+# The size experiments leave build trees of their own beside target/, and a
+# build tree holds .pdb files, which carry the absolute paths of the machine
+# that produced them.
+target-*/

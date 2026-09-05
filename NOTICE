@@ -1,0 +1,100 @@
+Cutaway
+Copyright 2026 Giovanni Costantini
+
+Licensed under the Apache License, Version 2.0. See LICENSE.
+
+--------------------------------------------------------------------------------
+Third-party components
+--------------------------------------------------------------------------------
+
+Cutaway.exe and CutawayAgent.exe are Rust programs, statically linked: every
+crate below is compiled into one of the two executables. All of them are
+permissive; none is copyleft. Read from the licence each crate declares, not
+from memory - see tools/ for how.
+
+MIT OR Apache-2.0
+-----------------
+
+ahash, arboard, base64, bitflags, cfg-if, crc32fast, displaydoc,
+document-features, ecolor, eframe, egui, egui-winit, egui_glow, emath, epaint,
+fdeflate, flate2, form_urlencoded, getrandom, gif, half, idna, image,
+image-webp, itoa, litrs, lock_api, log, num-traits, once_cell, parking_lot,
+parking_lot_core, percent-encoding, png, proc-macro2, quote, rustls-pki-types,
+scopeguard, serde, serde_core, serde_json, smallvec, smol_str,
+stable_deref_trait, static_assertions, syn, ttf-parser, unicode-segmentation,
+ureq, url, web-time, webbrowser, weezl, windows, windows-core,
+windows-implement, windows-interface, windows-link, windows-result,
+windows-strings, windows-sys, windows-targets, windows_x86_64_msvc
+
+Also under the same choice, written differently by their authors:
+idna_adapter, nohash-hasher, pin-project-lite, utf8_iter, zeroize,
+quick-error, winapi
+
+MIT
+---
+
+color_quant, fax, glutin-winit, memoffset, rfd, simd-adler32, synstructure,
+tiff, tracing, tracing-core, zmij
+
+Apache-2.0
+----------
+
+ab_glyph, ab_glyph_rasterizer, glutin, glutin_egl_sys, glutin_wgl_sys,
+owned_ttf_parser, winit
+
+Unicode-3.0
+-----------
+
+icu_collections, icu_locale_core, icu_normalizer, icu_normalizer_data,
+icu_properties, icu_properties_data, icu_provider, litemap, potential_utf,
+tinystr, writeable, yoke, yoke-derive, zerofrom, zerofrom-derive, zerotrie,
+zerovec, zerovec-derive
+
+A choice of three or more
+-------------------------
+
+cursor-icon, glow, raw-window-handle, zune-core, zune-jpeg   MIT OR Apache-2.0 OR Zlib
+bytemuck, bytemuck_derive                                    Zlib OR Apache-2.0 OR MIT
+miniz_oxide                                                  MIT OR Zlib OR Apache-2.0
+zerocopy, zerocopy-derive                                    BSD-2-Clause OR Apache-2.0 OR MIT
+adler2                                                       0BSD OR MIT OR Apache-2.0
+rustls                                                       Apache-2.0 OR ISC OR MIT
+byteorder-lite, memchr                                       Unlicense OR MIT
+moxcms, pxfm                                                 BSD-3-Clause OR Apache-2.0
+
+The rest
+--------
+
+libloading, rustls-webpki, untrusted                         ISC
+clipboard-win, error-code                                    BSL-1.0
+webpki-roots                                                 CDLA-Permissive-2.0
+subtle                                                       BSD-3-Clause
+ring                                                         Apache-2.0 AND ISC
+dpi                                                          Apache-2.0 AND MIT
+unicode-ident                                                (MIT OR Apache-2.0) AND Unicode-3.0
+
+Fonts
+-----
+
+Two kinds, and only one of them is redistributed.
+
+The interface is set in Segoe UI and Consolas, READ FROM WINDOWS at run time.
+No Microsoft font file is embedded or shipped.
+
+Behind them, as the fallback for anything those do not cover and for machines
+that do not have them, are the faces epaint carries - compiled into
+Cutaway.exe through the crate epaint_default_fonts:
+
+    Ubuntu-Light        Ubuntu Font Licence 1.0
+    NotoEmoji-Regular   SIL Open Font License 1.1
+    Hack-Regular        MIT, with the Bitstream Vera licence for its ancestor
+    emoji-icon-font     MIT
+
+Their full licence texts travel inside that crate, under fonts/.
+
+Not bundled
+-----------
+
+Windows' own OCR engine reads the text in a picture, and MAPI hands a message
+to whichever mail client is installed. Both are components of the operating
+system: used, not redistributed.

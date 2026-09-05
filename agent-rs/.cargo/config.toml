@@ -1,0 +1,7 @@
+# The C runtime goes inside the binary, so nothing has to be installed for it to
+# run: without this an msvc build imports VCRUNTIME140.dll, which is the Visual
+# C++ redistributable and not part of Windows. The agent starts at logon on
+# machines nobody is watching; a missing DLL there is a shortcut that silently
+# stops working.
+[build]
+rustflags = ["-C", "target-feature=+crt-static"]

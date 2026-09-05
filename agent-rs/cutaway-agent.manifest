@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<assembly xmlns="urn:schemas-microsoft-com:asm.v1" manifestVersion="1.0">
+  <assemblyIdentity type="win32" name="Cutaway.Agent" version="1.0.0.0"/>
+  <!-- Version 6 of the common controls, and nothing else.
+       It is here for one reason: TaskDialogIndirect lives in comctl32 version 6
+       and is simply not there without this, so the About dialog would fail to
+       open. Visual styles come with it, which is what a program of this era
+       should look like anyway.
+
+       Deliberately no dpiAware element. The agent declares per-monitor v2
+       awareness by calling SetProcessDpiAwarenessContext before it reads a
+       single screen metric - see dpi.rs - and a manifest that said it too would
+       take that decision away from the code that explains it. -->
+  <dependency>
+    <dependentAssembly>
+      <assemblyIdentity
+        type="win32"
+        name="Microsoft.Windows.Common-Controls"
+        version="6.0.0.0"
+        processorArchitecture="*"
+        publicKeyToken="6595b64144ccf1df"
+        language="*"/>
+    </dependentAssembly>
+  </dependency>
+</assembly>

@@ -1,0 +1,12 @@
+# The C runtime goes inside the binary.
+#
+# Without this the executable imports VCRUNTIME140.dll, which is the Visual C++
+# redistributable and is *not* part of Windows: on a machine that has never had
+# it installed the program does not start, and what Windows shows is a missing
+# DLL, not an explanation. The whole argument for the native build is that it
+# asks nothing of the machine - a runtime to install would give that away for
+# the sake of a few hundred kilobytes.
+#
+# The UCRT half (api-ms-win-crt-*) is Windows' own and needs nothing.
+[build]
+rustflags = ["-C", "target-feature=+crt-static"]

@@ -1,0 +1,11 @@
+# msvc, the same as the editor next door.
+#
+# It was gnu for a while, and the reason it could be was that this program asks
+# nothing of the machine. What msvc adds is rc.exe: the Windows resource
+# compiler, and therefore the icon and the version fields inside the file. The
+# GNU toolchain wants windres for that, which rustup does not ship.
+#
+# The C runtime is linked statically - see .cargo/config.toml - so the msvc
+# build carries no redistributable either.
+[toolchain]
+channel = "stable-x86_64-pc-windows-msvc"

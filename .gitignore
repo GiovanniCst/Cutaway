@@ -1,0 +1,10 @@
+# Build output. Cargo's own target/ is ignored by each crate's .gitignore;
+# dist/ is where the packages and the sandbox reports land.
+/dist/
+
+# Local config and editor state
+.env
+.env.*
+.claude/
+.vscode/
+.idea/

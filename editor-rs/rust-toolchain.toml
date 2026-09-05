@@ -1,0 +1,10 @@
+# msvc here, gnu next door in agent-rs, and the difference is not a preference.
+#
+# eframe pulls in windows-sys 0.60 through its dependencies, and from 0.60 that
+# crate links through raw-dylib: on the gnu toolchain that builds its import
+# libraries with dlltool, which rustup does not ship, and the build stops with
+# "error calling dlltool 'dlltool.exe': program not found" - a message that says
+# nothing about the cause. The agent stays on gnu because it can: it is self
+# contained and asks nothing of the machine.
+[toolchain]
+channel = "stable-x86_64-pc-windows-msvc"
